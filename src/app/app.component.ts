@@ -15,6 +15,7 @@ export class AppComponent {
     belt: "Black"
   };
   
+  //create an event handler 
   yell(event)
   {
     alert("I am yelling");

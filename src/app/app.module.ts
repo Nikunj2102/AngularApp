@@ -4,16 +4,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DirectoryComponent } from './directory/directory.component';
+import { FilterPipe } from './filter.pipe';
+import {FormsModule} from '@angular/forms';
+
 //Add the array in the imports array
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DirectoryComponent
+    DirectoryComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

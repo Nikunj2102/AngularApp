@@ -1,6 +1,26 @@
-<p>
-  directory works!
-</p>
-<p>
-  {{ninja}}
-</p>
+<h2>Listing Names</h2>
+
+<ul id="listing-ninja">
+  <!-- <li *ngFor = "let ninja of ninjas">{{ninja.name}}</li> -->
+  <form id="filter">
+    <label>Filter by Names:</label>
+    <input type="text" [(ngModel)]="term">
+  </form>
+  <li *ngFor = "let ninja of ninjas | filter:term">
+
+    <div class="single-ninja">
+      <!--Colour-->
+      <span [ngStyle]="{background: ninja.belt}">{{ninja.belt}} belt</span>
+      <!--Name-->
+      <!--using pipes....order in pipes matter. The first one is executed first 
+        followed by the next
+      -->
+      <h3>{{ninja.name | uppercase}}</h3>
+      <div (click)="remove($event)" attr.data-name="ninja.name">
+        DELETE
+      </div>
+
+    </div>
+
+  </li>
+</ul>
